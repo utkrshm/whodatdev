@@ -18,12 +18,12 @@ export default function Home() {
         {/* Floating elements */}
         <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[1%] w-[28%]" alt="cloud1" />
         <img src="/assets/pixil_clouds2.png" className="absolute top-[5%] right-[35%] w-[25%]" alt="cloud2" />
-        <img src="/assets/pixil_clouds1.png" className="absolute top-[15%] right-[5%] w-[15%]" alt="cloud3" />
-        <img src="/assets/pixil_specs.png" className="absolute top-[20%] right-[23%] w-[5%] rotate-12" alt="sunglasses" />
+        <img src="/assets/pixil_clouds3.png" className="absolute top-[15%] right-[3%] w-[15%]" alt="cloud3" />
+        <img src="/assets/pixil_specs.png" className="absolute top-[20%] right-[13%] w-[15%] rotate-12 z-1" alt="sunglasses" />
         <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[30%] left-[17%] w-[7%] z-1" alt="dino" />
         <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[30%] right-[17%] w-[7%] z-1" alt="donut" />
-        <img src="/assets/pixil_splat1.png" className="absolute top-[25%] left-[18%] w-[3%]" alt="splat1" />
-        <img src="/assets/pixil_splat2.png" className="absolute top-[28%] left-[21%] w-[2%]" alt="splat2" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[18%] w-[7%] z-1 rotate-340" alt="splat1" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[34%] left-[25%] w-[3%] z-1 rotate-30" alt="splat2" />
 
         {/* Main content */}
         <div
