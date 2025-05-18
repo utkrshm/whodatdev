@@ -2,102 +2,62 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main
+      className="relative w-full h-screen overflow-hidden text-white font-mono"
+      style={{
+        backgroundColor: "black",
+        backgroundImage: "url('/grid-pattern.svg')",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        opacity: 1,
+      }}
+    >
+      {/* Background grid (now set via backgroundImage on <main>) */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Floating elements */}
+      {/* Clouds */}
+      <img src="/assets/pixil_clouds1.png" className="absolute top-8 left-16 w-32 z-10" alt="cloud" />
+      <img src="/assets/pixil_clouds2.png" className="absolute top-8 right-32 w-40 z-10" alt="cloud" />
+      <img src="/assets/pixil_clouds1.png" className="absolute top-20 right-8 w-28 z-10" alt="cloud" />
+      {/* Sunglasses */}
+      <img src="/assets/pixil_specs.png" className="absolute top-24 right-[23%] w-16 rotate-12 z-20" alt="sunglasses" />
+      {/* Dinosaur */}
+      <img src="/assets/pixil_dinosaur.png" className="absolute bottom-40 left-16 w-16 z-20" alt="dino" />
+      {/* Donut */}
+      <img src="/assets/pixil_donut1.png" className="absolute bottom-32 right-20 w-16 z-20" alt="donut" />
+      {/* Green pixel splats */}
+      <img src="/assets/pixil_splat1.png" className="absolute top-28 left-[18%] w-10 z-20" alt="splat" />
+      <img src="/assets/pixil_splat2.png" className="absolute top-32 left-[21%] w-6 z-20" alt="splat" />
+
+      {/* Main screen */}
+      <div className="relative z-30 mx-auto mt-32 w-[90%] max-w-3xl bg-pink-600 border-8 border-black p-12 rounded-lg shadow-2xl text-center pixel-font"
+        style={{ boxShadow: "8px 8px 0 #222" }}>
+        <h1 className="text-6xl font-bold tracking-widest pixel-font mb-8">WHO DAT DEV?</h1>
+        <div className="flex justify-center items-center gap-2 mb-8">
+          {/* Pacman and dots */}
+          <img src="/assets/pixil_pacman.png" alt="pacman" className="h-6" />
+          <img src="/assets/pixil_pacfood.png" alt="pacfood1" className="h-6" />
+          <img src="/assets/pixil_pacfood.png" alt="pacfood2" className="h-6" />
+          <img src="/assets/pixil_pacfood.png" alt="pacfood3" className="h-6" />
+          <img src="/assets/pixil_pacfood.png" alt="pacfood4" className="h-6" />
+        
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        {/* GDSC Button */}
+        <div className="flex justify-center">
+          <button className="bg-black text-white px-8 py-4 rounded-lg border-2 border-white flex items-center gap-3 shadow-lg pixel-font text-lg"
+            style={{ boxShadow: "4px 4px 0 #222" }}>
+            <span>GDSC</span>
+            <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom cityscape */}
+      <div className="absolute bottom-0 w-full z-20">
+        <img src="/assets/pixil_buildings.png" alt="city" className="w-full" />
+      </div>
+    </main>
   );
 }
+
