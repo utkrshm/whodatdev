@@ -13,20 +13,42 @@ export default function Home() {
         }}
       />
 
+      {/* ⭐ Starry Sky */}
+{[...Array(30)].map((_, i) => {
+  const top = Math.floor(Math.random() * 40); // upper 40% of screen
+  const left = Math.floor(Math.random() * 100); // 0 to 100% width
+  const size = 0.5; // scale 0.5x to 2x
+  return (
+    <img
+      key={i}
+      src="/assets/pixil_stars.png"
+      alt="star"
+      className="absolute z-[1] pointer-events-none opacity-80"
+      style={{
+        top: `${top}%`,
+        left: `${left}%`,
+        width: `${size}rem`,
+        transform: `scale(${size})`,
+      }}
+    />
+  );
+})}
+
+
       {/* ✅ Content wrapper with higher z-index */}
       <div className="relative z-10 w-[90vw] max-w-[1280px] aspect-[16/9] mx-auto">
         {/* Floating elements */}
-        <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[1%] w-[28%]" alt="cloud1" />
-        <img src="/assets/pixil_clouds2.png" className="absolute top-[5%] right-[35%] w-[25%]" alt="cloud2" />
-        <img src="/assets/pixil_clouds3.png" className="absolute top-[15%] right-[3%] w-[15%]" alt="cloud3" />
-        <img src="/assets/pixil_specs.png" className="absolute top-[27%] right-[7%] w-[15%] rotate-12 z-1" alt="sunglasses" />
-        <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[0%] left-[10%] w-[10%] z-1" alt="dino" />
-        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[1%] right-[13%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[11%] w-[7%] z-1 rotate-[340deg]" alt="weed1" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[33%] left-[17%] w-[3%] z-1 rotate-[30deg]" alt="weed2" />
+        <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[0px] w-[28%]" alt="cloud1" />
+        <img src="/assets/pixil_clouds2.png" className="absolute top-[5%] right-[35%] w-[28%]" alt="cloud2" />
+        <img src="/assets/pixil_clouds3.png" className="absolute top-[4%] right-[0px] w-[28%]" alt="cloud3" />
+        <img src="/assets/pixil_specs.png" className="absolute top-[27%] right-[10%] w-[15%] rotate-12 z-1" alt="sunglasses" />
+        <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[5%] left-[14%] w-[10%] z-1" alt="dino" />
+        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[5%] right-[16%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[27%] left-[17%] w-[7%] z-1 rotate-[340deg]" alt="weed1" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[35%] left-[23%] w-[3%] z-1 rotate-[30deg]" alt="weed2" />
 
         {/* Pink rectangle image as background */}
-        <div className="absolute top-[30%] left-1/2 translate-x-[-50%] w-[75%]">
+        <div className="absolute top-[30%] left-1/2 translate-x-[-50%] w-[65%]">
           <img src="/assets/pixil_pinkrectangle.png" alt="background-box" className="w-full" />
 
           {/* Overlayed content */}
