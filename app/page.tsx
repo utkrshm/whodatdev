@@ -19,34 +19,39 @@ export default function Home() {
         <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[1%] w-[28%]" alt="cloud1" />
         <img src="/assets/pixil_clouds2.png" className="absolute top-[5%] right-[35%] w-[25%]" alt="cloud2" />
         <img src="/assets/pixil_clouds3.png" className="absolute top-[15%] right-[3%] w-[15%]" alt="cloud3" />
-        <img src="/assets/pixil_specs.png" className="absolute top-[20%] right-[13%] w-[15%] rotate-12 z-1" alt="sunglasses" />
-        <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[30%] left-[17%] w-[7%] z-1" alt="dino" />
-        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[30%] right-[17%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[18%] w-[7%] z-1 rotate-[340deg]" alt="weed1" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[34%] left-[25%] w-[3%] z-1 rotate-[30deg]" alt="weed2" />
+        <img src="/assets/pixil_specs.png" className="absolute top-[27%] right-[7%] w-[15%] rotate-12 z-1" alt="sunglasses" />
+        <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[0%] left-[10%] w-[10%] z-1" alt="dino" />
+        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[1%] right-[13%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[11%] w-[7%] z-1 rotate-[340deg]" alt="weed1" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[33%] left-[17%] w-[3%] z-1 rotate-[30deg]" alt="weed2" />
 
         {/* Pink rectangle image as background */}
-        <div className="absolute top-[25%] left-1/2 translate-x-[-50%] w-[60%] ">
+        <div className="absolute top-[30%] left-1/2 translate-x-[-50%] w-[75%]">
           <img src="/assets/pixil_pinkrectangle.png" alt="background-box" className="w-full" />
 
           {/* Overlayed content */}
-          <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center p-6">
-            <h1 className="text-4xl font-extrabold tracking-widest mb-6 pixel-font text-black">WHO DAT DEV?</h1>
+          <div className="absolute mt-[50px] top-0 left-0 w-full h-full flex flex-col items-center justify-center p-6">
+            <h1 className="text-4xl font-extrabold tracking-widest mb-6 pixel-font text-black text-[80px]">WHO DAT DEV?</h1>
             <div className="flex justify-center items-center gap-2 mb-6">
               <img src="/assets/pixil_pacman.png" alt="pacman" className="h-6" />
-              {[...Array(4)].map((_, i) => (
+              {[...Array(7)].map((_, i) => (
                 <img key={i} src="/assets/pixil_pacfood.png" alt={`pacfood${i}`} className="h-6" />
               ))}
             </div>
             <div className="flex justify-center">
-              <button
-                className="bg-black text-white px-6 py-3 rounded-lg border-2 border-white flex items-center gap-2 shadow-lg text-base pixel-font"
-                style={{ boxShadow: "4px 4px 0 #222" }}
-              >
-                <span>GDSC</span>
-                <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
-              </button>
-            </div>
+  <div className="relative w-[450px] h-[150px] mt-[-50px]">
+    <img
+      src="/assets/pixil_greyrectangle.png"
+      alt="button background"
+      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+    />
+    <div className="absolute inset-0 mb-[10px] flex items-center justify-center gap-2 pixel-font text-white text-base">
+      <span className="text-[30px] font-extrabold top-[40%] ">GDSC</span>
+      <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
