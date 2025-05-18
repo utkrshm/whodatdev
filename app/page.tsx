@@ -9,7 +9,7 @@ export default function Home() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          opacity: 0.2, // Adjust to desired background visibility
+          opacity: 0.2,
         }}
       />
 
@@ -22,29 +22,31 @@ export default function Home() {
         <img src="/assets/pixil_specs.png" className="absolute top-[20%] right-[13%] w-[15%] rotate-12 z-1" alt="sunglasses" />
         <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[30%] left-[17%] w-[7%] z-1" alt="dino" />
         <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[30%] right-[17%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[18%] w-[7%] z-1 rotate-340" alt="splat1" />
-        <img src="/assets/pixil_weed.png" className="absolute top-[34%] left-[25%] w-[3%] z-1 rotate-30" alt="splat2" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[18%] w-[7%] z-1 rotate-[340deg]" alt="weed1" />
+        <img src="/assets/pixil_weed.png" className="absolute top-[34%] left-[25%] w-[3%] z-1 rotate-[30deg]" alt="weed2" />
 
-        {/* Main content */}
-        <div
-          className="absolute top-[25%] left-[50%] translate-x-[-50%] bg-pink-600 border-8 border-black p-8 rounded-lg shadow-2xl text-center w-[60%]"
-          style={{ boxShadow: "8px 8px 0 #222" }}
-        >
-          <h1 className="text-4xl font-extra-bold tracking-widest mb-6 pixel-font text-black">WHO DAT DEV?</h1>
-          <div className="flex justify-center items-center gap-2 mb-6">
-            <img src="/assets/pixil_pacman.png" alt="pacman" className="h-6" />
-            {[...Array(4)].map((_, i) => (
-              <img key={i} src="/assets/pixil_pacfood.png" alt={`pacfood${i}`} className="h-6" />
-            ))}
-          </div>
-          <div className="flex justify-center">
-            <button
-              className="bg-black text-white px-6 py-3 rounded-lg border-2 border-white flex items-center gap-2 shadow-lg text-base pixel-font"
-              style={{ boxShadow: "4px 4px 0 #222" }}
-            >
-              <span>GDSC</span>
-              <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
-            </button>
+        {/* Pink rectangle image as background */}
+        <div className="absolute top-[25%] left-1/2 translate-x-[-50%] w-[60%] ">
+          <img src="/assets/pixil_pinkrectangle.png" alt="background-box" className="w-full" />
+
+          {/* Overlayed content */}
+          <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center p-6">
+            <h1 className="text-4xl font-extrabold tracking-widest mb-6 pixel-font text-black">WHO DAT DEV?</h1>
+            <div className="flex justify-center items-center gap-2 mb-6">
+              <img src="/assets/pixil_pacman.png" alt="pacman" className="h-6" />
+              {[...Array(4)].map((_, i) => (
+                <img key={i} src="/assets/pixil_pacfood.png" alt={`pacfood${i}`} className="h-6" />
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <button
+                className="bg-black text-white px-6 py-3 rounded-lg border-2 border-white flex items-center gap-2 shadow-lg text-base pixel-font"
+                style={{ boxShadow: "4px 4px 0 #222" }}
+              >
+                <span>GDSC</span>
+                <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
