@@ -21,7 +21,7 @@ export default function Home() {
         <img src="/assets/pixil_clouds3.png" className="absolute top-[15%] right-[3%] w-[15%]" alt="cloud3" />
         <img src="/assets/pixil_specs.png" className="absolute top-[20%] right-[13%] w-[15%] rotate-12 z-1" alt="sunglasses" />
         <img src="/assets/pixil_dinosaur.png" className="absolute bottom-[30%] left-[17%] w-[7%] z-1" alt="dino" />
-        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[30%] right-[17%] w-[7%] z-1" alt="donut" />
+        <img src="/assets/pixil_pinkdonut.png" className="absolute bottom-[30%] right-[17%] w-[7%] z-1 scale-x-[-1]" alt="donut" />
         <img src="/assets/pixil_weed.png" className="absolute top-[25%] left-[18%] w-[7%] z-1 rotate-340" alt="splat1" />
         <img src="/assets/pixil_weed.png" className="absolute top-[34%] left-[25%] w-[3%] z-1 rotate-30" alt="splat2" />
 
