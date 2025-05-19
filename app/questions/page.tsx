@@ -8,17 +8,18 @@ const STAR_POSITIONS = Array.from({ length: 30 }, () => ({
   size: 0.5
 }));
 
+
 export default function Questions() {
     const [question, setQuestion] = useState("is your character in the tech domain?");
-    const [options, setOptions] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const options = ["yes", "no", "maybe", "I don't know"];
 
     useEffect(() => {
         fetch("https://api.example.com/question")
             .then((res) => res.json())
             .then((data) => {
                 if (data?.question) setQuestion(data.question);
-                if (Array.isArray(data?.options)) setOptions(data.options);
             })
             .catch((err) => {
                 console.error("Failed to fetch question:", err);
@@ -100,19 +101,25 @@ export default function Questions() {
                 </div>
             </div>
 
-            {/* Options Buttons */}
-            <div className="absolute top-[60%] left-[8%] flex gap-4 z-10 flex-wrap max-w-[80%]">
-                {options.map((option, index) => (
-                    <button
-                        key={index}
-                        onClick={() => handleAnswer(option)}
-                        className="relative w-[200px] h-[60px] text-white font-bold text-lg pixel-font"
-                        style={{ background: `url('/assets/pixil_answerre.png')`, backgroundSize: 'cover' }}
-                    >
-                        <span className="absolute inset-0 flex items-center justify-center">{option}</span>
-                    </button>
-                ))}
-            </div>
+{/* Options Buttons in 2x2 Grid */}
+<div className="absolute top-[50%] left-[8%] z-10 w-[50%]">
+  <div className="grid grid-cols-2 gap-8 w-full">
+    {options.map((option, index) => (
+      <button
+        key={index}
+        onClick={() => handleAnswer(option)}
+        className="relative w-full h-[60px] text-white font-bold text-lg pixel-font"
+        style={{ 
+          background: `url('/assets/pixil_answerre.png')`, 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <span className="absolute inset-0 flex items-center justify-center">{option}</span>
+      </button>
+    ))}
+  </div>
+</div>
 
             {/* Big Donut */}
             <img
