@@ -1,7 +1,38 @@
+"use client";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
+  const router = useRouter();
+  const [starPositions, setStarPositions] = useState<Array<{top: number, left: number, size: number}>>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Generate star positions only on client side
+    const positions = Array.from({ length: 30 }, () => ({
+      top: Math.floor(Math.random() * 40),
+      left: Math.floor(Math.random() * 100),
+      size: 0.5
+    }));
+    setStarPositions(positions);
+    setIsLoading(false);
+  }, []);
+
+  const handleClick = () => {
+    router.push('/questions');
+  };
+
+  if (isLoading) {
+    return (
+      <main className="relative w-full h-screen bg-[#1E1E1E] text-white font-mono overflow-hidden flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </main>
+    );
+  }
+
   return (
     <main className="relative w-full h-screen bg-[#1E1E1E] text-white font-mono overflow-hidden">
-      {/* 🔧 Background image with opacity */}
+      {/* Background image with opacity */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -13,29 +44,23 @@ export default function Home() {
         }}
       />
 
-      {/* ⭐ Starry Sky */}
-{[...Array(30)].map((_, i) => {
-  const top = Math.floor(Math.random() * 40); // upper 40% of screen
-  const left = Math.floor(Math.random() * 100); // 0 to 100% width
-  const size = 0.5; // scale 0.5x to 2x
-  return (
-    <img
-      key={i}
-      src="/assets/pixil_stars.png"
-      alt="star"
-      className="absolute z-[1] pointer-events-none opacity-80"
-      style={{
-        top: `${top}%`,
-        left: `${left}%`,
-        width: `${size}rem`,
-        transform: `scale(${size})`,
-      }}
-    />
-  );
-})}
+      {/* Starry Sky - now using client-side generated positions */}
+      {starPositions.map((star, i) => (
+        <img
+          key={i}
+          src="/assets/pixil_stars.png"
+          alt="star"
+          className="absolute z-[1] pointer-events-none opacity-80"
+          style={{
+            top: `${star.top}%`,
+            left: `${star.left}%`,
+            width: `${star.size}rem`,
+            transform: `scale(${star.size})`,
+          }}
+        />
+      ))}
 
-
-      {/* ✅ Content wrapper with higher z-index */}
+      {/* Rest of your component remains the same */}
       <div className="relative z-10 w-[90vw] max-w-[1280px] aspect-[16/9] mx-auto">
         {/* Floating elements */}
         <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[0px] w-[28%]" alt="cloud1" />
@@ -61,19 +86,21 @@ export default function Home() {
               ))}
             </div>
             <div className="flex justify-center">
-  <div className="relative w-[450px] h-[150px] mt-[-50px]">
-    <img
-      src="/assets/pixil_greyrectangle.png"
-      alt="button background"
-      className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-    />
-    <div className="absolute inset-0 mb-[10px] flex items-center justify-center gap-2 pixel-font text-white text-base">
-      <span className="text-[30px] font-extrabold top-[40%] ">GDSC</span>
-      <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
-    </div>
-  </div>
-</div>
-
+              <button 
+                onClick={handleClick}
+                className="relative w-[450px] h-[150px] mt-[-50px] cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                <img
+                  src="/assets/pixil_greyrectangle.png"
+                  alt="button background"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+                <div className="absolute inset-0 mb-[10px] flex items-center justify-center gap-2 pixel-font text-white text-base">
+                  <span className="text-[30px] font-extrabold top-[40%]">GDSC</span>
+                  <img src="/assets/pixil_gdsclogo.png" alt="gdsc" className="h-5" />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
