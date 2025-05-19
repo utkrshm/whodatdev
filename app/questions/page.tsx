@@ -137,7 +137,7 @@ export default function Questions() {
                 <img 
                     src="/assets/pixil_crown.png" 
                     alt="crown" 
-                    className="absolute top-[-20%] right-[20%] w-[25%] z-[6]"
+                    className="absolute top-[-15%] right-[39%] w-[25%] z-[6]"
                 />
             </div>
         </main>
