@@ -8,9 +8,8 @@ const STAR_POSITIONS = Array.from({ length: 30 }, () => ({
   size: 0.5
 }));
 
-
 export default function Questions() {
-    const [question, setQuestion] = useState("is your character in the tech domain?");
+    const [question, setQuestion] = useState("Is your character in the tech domain?");
     const [isLoading, setIsLoading] = useState(true);
 
     const options = ["yes", "no", "maybe", "I don't know"];
@@ -77,14 +76,11 @@ export default function Questions() {
                 />
             ))}
 
-            {/* Rest of your component remains the same */}
-            {/* Decorative Assets */}
+            {/* Decorative Clouds */}
             <div className="relative z-10 w-[90vw] max-w-[1280px] aspect-[16/9] mx-auto">
                 <img src="/assets/pixil_clouds1.png" className="absolute top-[0.1%] left-[0px] w-[28%]" alt="cloud1" />
                 <img src="/assets/pixil_clouds2.png" className="absolute top-[5%] right-[35%] w-[28%]" alt="cloud2" />
                 <img src="/assets/pixil_clouds3.png" className="absolute top-[4%] right-[0px] w-[28%]" alt="cloud3" />
-                <img src="/assets/pixil_crown.png" className="absolute top-[39%] right-[113px] w-[10%]" alt="crown" />
-                <img src="/assets/pixil_heartsre.png" className="absolute bottom-[-210px] left-[10px] w-[26%]" alt="hearts" />
             </div>
 
             {/* Question Bubble */}
@@ -101,33 +97,49 @@ export default function Questions() {
                 </div>
             </div>
 
-{/* Options Buttons in 2x2 Grid */}
-<div className="absolute top-[50%] left-[8%] z-10 w-[50%]">
-  <div className="grid grid-cols-2 gap-8 w-full">
-    {options.map((option, index) => (
-      <button
-        key={index}
-        onClick={() => handleAnswer(option)}
-        className="relative w-full h-[60px] text-white font-bold text-lg pixel-font"
-        style={{ 
-          background: `url('/assets/pixil_answerre.png')`, 
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <span className="absolute inset-0 flex items-center justify-center">{option}</span>
-      </button>
-    ))}
-  </div>
-</div>
+            {/* Options Buttons in 2x2 Grid */}
+            <div className="absolute top-[50%] left-[8%] z-10 w-[50%]">
+                <div className="grid grid-cols-2 gap-8 w-full">
+                    {options.map((option, index) => (
+                        <button
+                            key={index}
+                            onClick={() => handleAnswer(option)}
+                            className="relative w-full h-[60px] text-white font-bold text-lg pixel-font hover:scale-105 transition-transform"
+                            style={{ 
+                                background: `url('/assets/pixil_answerre.png')`, 
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center'
+                            }}
+                        >
+                            <span className="absolute inset-0 flex items-center justify-center">{option}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
 
-            {/* Big Donut */}
-            <img
-                src="/assets/pixil_donutfinalre.png"
-                alt="big donut"
-                className="fixed bottom-[-150px] right-[-95px] w-[50vw] z-[1] pointer-events-none"
-                style={{ marginBottom: "-1px" }}
-            />
+            {/* Hearts at Bottom of Screen */}
+            <div className="fixed bottom-0 left-20 w-full z-[4] pointer-events-none">
+                <img 
+                    src="/assets/pixil_heartsre.png" 
+                    alt="hearts" 
+                    className="w-[26%] max-w-[300px] ml-[10px]"
+                />
+            </div>
+
+            {/* Big Donut with Crown */}
+            <div className="fixed bottom-[-150px] right-[-95px] w-[50vw] z-[5] pointer-events-none">
+                <img
+                    src="/assets/pixil_donutfinalre.png"
+                    alt="big donut"
+                    className="w-full"
+                    style={{ marginBottom: "-1px" }}
+                />
+                <img 
+                    src="/assets/pixil_crown.png" 
+                    alt="crown" 
+                    className="absolute top-[-20%] right-[20%] w-[25%] z-[6]"
+                />
+            </div>
         </main>
     );
 }
