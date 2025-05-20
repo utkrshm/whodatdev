@@ -61,10 +61,10 @@ export default function Questions() {
   <div className="grid grid-cols-2 gap-8 w-full">
     {options.map((option, index) => {
       const imageFilenames = [
-        'yesbutton_ques.png',
-        'nobutton_ques.png',
-        'maybebutton_ques.png',
-        'maybenotbutton_qyes.png'
+        'yesbutton.png',
+        'nobutton.png',
+        'maybebutton.png',
+        'maybenotbutton.png'
       ];
 
       const bgImage = `/assets/${imageFilenames[index]}`;
