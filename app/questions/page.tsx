@@ -73,7 +73,7 @@ export default function Questions() {
         <button
           key={index}
           onClick={() => handleAnswer(option)}
-          className="relative w-full h-[60px] text-white font-bold text-lg pixel-font hover:scale-105 transition-transform"
+          className="relative w-[70%] h-[60px] text-white font-bold text-lg pixel-font hover:scale-105 transition-transform"
           style={{
             background: `url('${bgImage}')`,
             backgroundSize: 'cover',
