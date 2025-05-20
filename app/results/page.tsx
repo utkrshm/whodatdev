@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation'; // Ensure useSearchParams is imported
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -10,7 +10,7 @@ interface GuessData {
   message?: string;
 }
 
-export default function Results() {
+function ResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams(); // To read URL query parameters
 
@@ -235,5 +235,13 @@ export default function Results() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Results() {
+  return (
+    <Suspense fallback={<main className="relative w-full h-screen bg-[#1E1E1E] text-white font-mono overflow-hidden flex items-center justify-center"><div className="text-white pixel-font text-xl">Loading...</div></main>}>
+      <ResultsContent />
+    </Suspense>
   );
 }
