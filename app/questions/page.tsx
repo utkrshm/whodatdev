@@ -5,7 +5,7 @@ export default function Questions() {
     const [question, setQuestion] = useState("Is your character in the tech domain?");
     const [isLoading, setIsLoading] = useState(true);
 
-    const options = ["yes", "no", "maybe", "I don't know"];
+    const options = ["yes", "no", "maybe", "maybe not"];
 
     useEffect(() => {
         fetch("https://api.example.com/question")
@@ -56,24 +56,35 @@ export default function Questions() {
       />
 
             {/* Options Buttons in 2x2 Grid */}
-            <div className="absolute top-[50%] left-[8%] z-10 w-[50%]">
-                <div className="grid grid-cols-2 gap-8 w-full">
-                    {options.map((option, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handleAnswer(option)}
-                            className="relative w-full h-[60px] text-white font-bold text-lg pixel-font hover:scale-105 transition-transform"
-                            style={{ 
-                                background: `url('/assets/pixil_answerre.png')`, 
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center'
-                            }}
-                        >
-                            <span className="absolute inset-0 flex items-center justify-center">{option}</span>
-                        </button>
-                    ))}
-                </div>
-            </div>
+{/* Options Buttons in 2x2 Grid */}
+<div className="absolute top-[50%] left-[8%] z-10 w-[50%]">
+  <div className="grid grid-cols-2 gap-8 w-full">
+    {options.map((option, index) => {
+      const imageFilenames = [
+        'yesbutton_ques.png',
+        'nobutton_ques.png',
+        'maybebutton_ques.png',
+        'maybenotbutton_qyes.png'
+      ];
+
+      const bgImage = `/assets/${imageFilenames[index]}`;
+
+      return (
+        <button
+          key={index}
+          onClick={() => handleAnswer(option)}
+          className="relative w-full h-[60px] text-white font-bold text-lg pixel-font hover:scale-105 transition-transform"
+          style={{
+            background: `url('${bgImage}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+        </button>
+      );
+    })}
+  </div>
+</div>
         </main>
     );
 }
