@@ -204,7 +204,7 @@ function QuestionsContent() {
             </div>
 
             {/* Big Donut with Crown */}
-            <div className="fixed bottom-[-150px] right-[-95px] w-[50vw] z-[5] pointer-events-none">
+            <div className="fixed bottom-[-150px] right-[-95px] w-[40vw] z-[5] pointer-events-none">
                 <img
                     src="/assets/pixil_donutfinalre.png"
                     alt="big donut"

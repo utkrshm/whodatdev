@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation'; // Ensure useSearchParams is imported
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -10,7 +10,7 @@ interface GuessData {
   message?: string;
 }
 
-function ResultsContent() {
+export default function Results() {
   const router = useRouter();
   const searchParams = useSearchParams(); // To read URL query parameters
 
@@ -183,8 +183,8 @@ function ResultsContent() {
       {/* Foreground content - original structure */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* Display server text (guess or final message) - original styling */}
-        <div className="p-6 rounded-xl text-center mt-[-100]">
-          <p className="text-xl pixel-font text-[45px]">{serverText}</p>
+        <div className="p-6 rounded-xl text-center mt-[-100] max-w-[90vw] sm:max-w-[400px] break-words overflow-auto">
+          <p className="text-xl pixel-font text-[40px] whitespace-pre-line break-words">{serverText}</p>
         </div>
 
         {/* Conditionally rendered confirmation buttons */}
@@ -235,13 +235,5 @@ function ResultsContent() {
         )}
       </div>
     </main>
-  );
-}
-
-export default function Results() {
-  return (
-    <Suspense fallback={<main className="relative w-full h-screen bg-[#1E1E1E] text-white font-mono overflow-hidden flex items-center justify-center"><div className="text-white pixel-font text-xl">Loading...</div></main>}>
-      <ResultsContent />
-    </Suspense>
   );
 }
